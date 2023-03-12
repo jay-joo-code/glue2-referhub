@@ -10,3 +10,5 @@ This project belongs equally to everyone who is currently working on the project
 
 - Jay Joo
 - Christine  Nyaga
+- Katherine Wei
+
