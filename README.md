@@ -9,6 +9,7 @@ This project belongs equally to everyone who is currently working on the project
 ## Contributors
 
 - Jay Joo
+- Eric Yoon
 - Christine  Nyaga
 - Katherine Wei
 
