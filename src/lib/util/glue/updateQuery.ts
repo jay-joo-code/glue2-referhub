@@ -10,14 +10,15 @@ interface IUpdateQuery {
 
 const updateQuery = ({ key = 'query', value = null, $page }: IUpdateQuery) => {
 	if (browser) {
+		const newSearchParams = new URLSearchParams($page?.url?.searchParams);
 		if (value && value?.length > 0) {
-			$page?.url?.searchParams?.set(key, value);
-			goto(`?${$page.url.searchParams.toString()}`, {
+			newSearchParams?.set(key, value);
+			goto(`?${newSearchParams.toString()}`, {
 				keepFocus: true
 			});
 		} else {
-			$page?.url?.searchParams?.delete(key);
-			goto(`?${$page.url.searchParams.toString()}`, {
+			newSearchParams?.delete(key);
+			goto(`?${newSearchParams.toString()}`, {
 				keepFocus: true
 			});
 		}
