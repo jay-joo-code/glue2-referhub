@@ -1,6 +1,7 @@
 <script lang="ts">
   import companies from '$lib/components/stores/glue/companies.js';
   import {writable} from 'svelte/store';
+  import {currentUser, pb} from '$lib/glue/pocketbase';
 
   const searchTerm = writable('');
 
@@ -37,6 +38,7 @@
         <li>
             <label for="my-modal-6" class="border border-gray-500 hover:bg-violet-600 font-bold p-1 block text-center rounded-md shadow-md">{company.name}</label>
             <!-- Put this part before </body> tag -->
+            {#if $currentUser}
             <input type="checkbox" id="my-modal-6" class="modal-toggle" />
             <div class="modal">
               <div class="modal-box w-11/12 max-w-5xl">
@@ -51,6 +53,18 @@
                 </div>
               </div>
             </div>
+            {/if}
+              {#if !$currentUser}
+              <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+              <div class="modal">
+                <div class="modal-box w-11/12 max-w-5xl">
+                  <h3 class="font-bold text-lg">Please login to submit a referral application.</h3>
+                  <div class="modal-action">
+                    <label for="my-modal-6" class="btn">Close</label>
+                  </div>
+                </div>
+              </div>
+                {/if}
         </li>
       {/each}
     </ul>
