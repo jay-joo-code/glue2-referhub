@@ -12,4 +12,6 @@ This project belongs equally to everyone who is currently working on the project
 - Eric Yoon
 - Christine  Nyaga
 - Katherine Wei
+- Rishika Cherivirala
 - Sylvia Han
+
